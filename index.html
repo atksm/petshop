@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>シングルページレイアウト</title>
+    <link rel="stylesheet" href="css/html5-doctor-reset-stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- サイト内リンクのスムーズスクロール -->
+    <script>
+      $(function(){
+        $('a[href^="#"]').click(function() {
+          var speed = 300; 
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
+    </head>
+
+    <body>
+<header>
+      <h1 class="title">Petshop<br>Shohoku</h1>
+      <p class="sub-title">あなたの笑顔を<br class="sub-br">見たいワン♪</p>
+    </header>
+<nav class="menu_flex">
+      <ul>
+    <li><a href="#" class="top">Petshop Shohoku</a></li>
+    <li><a href="#about" >about</a></li>
+    <li><a href="#pets" >pets</a></li>
+    <li><a href="#map" >map</a></li>
+  </ul>
+    </nav>
+<section class="content" id="about">
+      <h2 class="heading">店舗紹介</h2>
+      <p class="description"> ペットショップ湘北は、神奈川県厚木市温水にある、犬や猫、小鳥などを扱っているペットショップです。たくさんのかわいいペット達が、いつでも皆さんのお越しをお待ちしております。ドッグランやワンちゃんを連れて飲食のできるカフェもご用意してありますので、お気軽に足をお運び下さい。 </p>
+    </section>
+<section class="content" id="pets">
+      <h2 class="heading">ペット紹介</h2>
+      <div class="pet-flex-container">
+    <div class="pet-flex-item"> <img src="./images/nabbit01.jpg" alt="ラッキー画像">
+          <div class="petInfo">
+        <h3 class="name"> ラッキー</h3>
+        <p>2010年1月23日</p>
+        <p>ミニチュアダックスフンド</p>
+        <p>52,500円</p>
+      </div>
+        </div>
+    <div class="pet-flex-item"> <img src="./images/nabbit02.jpg" alt="チャーミー画像">
+          <div class="petInfo">
+        <h3 class="name"> チャーミー</h3>
+        <p>2010年5月1日</p>
+        <p>トイプードル</p>
+        <p>31,500円</p>
+      </div>
+        </div>
+    <div class="pet-flex-item"> <img src="./images/nabbit03.jpg" alt="元気画像">
+          <div class="petInfo">
+        <h3 class="name"> 元気</h3>
+        <p>2010年6月10日</p>
+        <p>チンチラ</p>
+        <p>49,900円</p>
+      </div>
+        </div>
+  </div>
+      <div class="pet-flex-container">
+    <div class="pet-flex-item"> <img src="./images/nabbit01.jpg" alt="ラッキー画像">
+          <div class="petInfo">
+        <h3 class="name"> ナビット1</h3>
+        <p>2010年1月23日</p>
+        <p>ミニチュアダックスフンド</p>
+        <p>52,500円</p>
+      </div>
+        </div>
+    <div class="pet-flex-item"> <img src="./images/nabbit02.jpg" alt="チャーミー画像">
+          <div class="petInfo">
+        <h3 class="name"> ナビット2</h3>
+        <p>2010年5月1日</p>
+        <p>トイプードル</p>
+        <p>31,500円</p>
+      </div>
+        </div>
+    <div class="pet-flex-item"> <img src="./images/nabbit03.jpg" alt="元気画像">
+          <div class="petInfo">
+        <h3 class="name"> ナビット3</h3>
+        <p>2010年6月10日</p>
+        <p>チンチラ</p>
+        <p>49,900円</p>
+      </div>
+        </div>
+  </div>
+    </section>
+<section class="content" id="map">
+      <h2 class="heading">営業案内</h2>
+      <p class="description"> 営業時間： 10:00-20:00<br>
+    定休日：不定休<br>
+    住所：〒243-8501 神奈川県厚木市温水428<br>
+    TEL：046-247-3131 </p>
+      <div class="googlemap_wrapper">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.800454199642!2d139.34480985038337!3d35.43497285094939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019aaa2da741857%3A0xc39d32734497be50!2sShohokutanki+University!5e0!3m2!1sen!2sjp!4v1545356368018" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+    </section>
+<footer>
+      <p>&copy; 2018-2020 Petshop Shohoku.</p>
+    </footer>
+
+</body>
+</html>

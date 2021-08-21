@@ -1,0 +1,148 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box; /* 全要素をborder-boxにする */
+}
+html {
+    font-size: 62.5%;  /* 1em（1rem）を10pxにするための準備 */
+}
+body {
+    font-size: 1.6rem;  /* 16pxをデフォルトのフォントサイズにする */
+    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background: url('../images/hero_image.jpg') no-repeat center center fixed; /*背景を固定*/
+    background-size: cover; /*背景画像の縦横いずれかをウィンドウに合わせる*/
+}
+nav.menu_flex { /*メニューを最上部に固定*/
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+nav.menu_flex ul {
+    display: flex;
+}
+nav.menu_flex ul li {
+    flex: 1;
+}
+nav.menu_flex ul li:first-child { /*メニューのliのうち最初のものを大きめに*/
+    flex: 3;
+}
+nav.menu_flex ul li a { /*メニューアイテムの設定*/
+    background-color: darkgreen;
+    color: palegreen;
+    display: block;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-left: solid 1px palegreen;
+    border-bottom: solid 1px palegreen;
+}
+nav.menu_flex ul li:first-child a { /*メニューアイテム最初のものの設定*/
+    font-family: 'Galada', sans-serif;
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+    overflow: hidden;
+}
+nav.menu_flex ul li a:hover { /*メニューアイテムにホバーした際の設定*/
+    color: white;
+}
+header { 
+    padding: 20rem 5rem; /*背景を見せるための余白設定*/
+}
+.title {
+    font-size: 10rem;
+    font-family: 'Galada', sans-serif;
+    color: green;
+    text-shadow: 6px 6px 3px palegreen, -1px 1px 0 palegreen, 1px -1px 0 palegreen, -1px -1px 0 palegreen; /*左上、右上、左下、右下にカゲをつける*/
+}
+.sub-title {
+    margin-top: 1rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.sub-br { 
+    display: none; /*サブタイトルの改行をPC向けでは消す*/
+}
+.content {
+    padding: 10rem 0;
+    font-size: 1.6rem;
+}
+.heading {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.description {
+    margin: 0 2rem;
+    line-height: 3rem;
+}
+#about, #map { 
+    background-color: palegreen;
+}
+#pets {
+    background-color: rgba(50,50,50,0.5); /*背景を見せるための半透明化（opacityだと前景も透ける）*/
+    color: white;
+}
+.pet-flex-container {
+    display: flex;
+}
+.pet-flex-item {
+    flex: 1;
+    margin: 1rem;
+    border: solid thin white;
+    border-radius: 2rem;
+    background-color: white;
+}
+.pet-flex-item img { 
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;  /*ペット画像の上部を角丸に*/
+}
+.petInfo {
+    padding: 1rem;
+    color: black;
+}
+.googlemap_wrapper {
+    padding: 2rem 2rem 0;
+}
+footer {
+    background-color: rgba(50,50,50,0.5);
+    color: white;
+    height: 30rem;
+    padding-top: 25rem;
+    text-align: center;
+}
+
+@media (max-width:600px) {
+body { /*背景のcover、fixedがスマホでは見られないための対応*/
+    background: none
+}
+body::before {/*背景のcover、fixedがスマホでは見られないための対応*/
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url(../images/hero_image.jpg) center/cover no-repeat;
+    -webkit-background-size: cover;
+}
+.title {
+    font-size: 5rem;
+}
+.sub-title {
+    font-size: 2rem;
+}
+.sub-br { /*スマホでサブタイトルを2行にする*/
+    display: inline;
+}
+.heading {
+    font-size: 2rem;
+}
+.pet-flex-container { /*ペットの並びをたてにする*/
+    flex-direction: column;
+}
+}
